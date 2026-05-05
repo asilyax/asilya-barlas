@@ -1,0 +1,137 @@
+:root {
+  /* 1. Color tokens */
+  --background-primary: #06090f;
+  --background-surface: #1a2230;
+  --text-primary: #f8fafc;
+  --text-secondary: #d7dee7;
+  --text-muted: #aeb7c2;
+  --accent: #f7f6f4;
+
+  /* 2. Font family tokens */
+  --font-family-logo: "Canela";
+  --font-family-primary: "Satoshi";
+  --font-family-mono: "IBM Plex Mono";
+
+  /* 3. Font weight tokens */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* 4. Font size tokens */
+  --font-size-h1: 64px;
+  --font-size-h2: 44px;
+  --font-size-h3: 28px;
+  --font-size-h4: 20px;
+  --font-size-subtitle: 18px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --font-size-nav: 15px;
+  --font-size-button: 14px;
+
+  /* 5. Line-height tokens */
+  --line-height-h1: 72px;
+  --line-height-h2: 56px;
+  --line-height-subtitle: 28px;
+  --line-height-body: 24px;
+  --line-height-label: 22px;
+  --line-height-button: 20px;
+
+  /* 6. Letter-spacing tokens */
+  --letter-spacing-h1: 0.03em;
+  --letter-spacing-h2: 0.01em;
+  --letter-spacing-subtitle: 0.08em;
+  --letter-spacing-body: 0.08em;
+  --letter-spacing-label: 0.08em;
+  --letter-spacing-nav: 0.08em;
+  --letter-spacing-link: 0.08em;
+  --letter-spacing-button: 0.05em;
+
+  /* 7. Spacing tokens */
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --space-160: 160px;
+
+  /* 8. Container tokens */
+  --container-padding: 96px;
+  --container-narrow-max-width: 680px;
+
+  /* 9. Section spacing tokens */
+  --section-spacing-small: 130px;
+  --section-spacing-medium: 140px;
+  --section-spacing-large: 200px;
+
+  /* 10. Radius tokens */
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 50px;
+
+  /* 11. Border tokens */
+  --border-color: #2a3446;
+  --line-color: rgba(255, 255, 255, 0.15);
+
+  /* 12. Shadow tokens */
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.18);
+  --shadow-card: 0 32px 96px rgba(0, 0, 0, 0.24);
+  --shadow-elevated: 0 40px 120px rgba(0, 0, 0, 0.32);
+  --shadow-glow: 0 0 80px rgba(246, 241, 231, 0.1);
+
+  /* 13. Gradient tokens */
+  --gradient-radial: radial-gradient(
+    circle,
+    rgba(246, 241, 231, 0.12) 0%,
+    rgba(231, 224, 228, 0.06) 55%,
+    rgba(207, 198, 187, 0) 100%
+  );
+  --gradient-linear: linear-gradient(
+    180deg,
+    rgba(246, 241, 231, 0.12) 0%,
+    rgba(231, 224, 228, 0.06) 55%,
+    rgba(207, 198, 187, 0) 100%
+  );
+  --accent-gradient-hover: linear-gradient(
+    90deg,
+    #f3e5de 0%,
+    #f8eee9 25%,
+    #ffffff 50%,
+    #f8eee9 75%,
+    #eeddd5 100%
+  );
+
+  /* 14. Transition + easing tokens */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+  --easing-default: ease;
+  --easing-smooth: ease-in-out;
+  --easing-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* 15. Z-index tokens */
+  --z-base: 0;
+  --z-content: 100;
+  --z-header: 500;
+  --z-overlay: 1000;
+  --z-modal: 2000;
+
+  /* 16. Breakpoint tokens */
+  --breakpoint-mobile: 390px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-wide: 1440px;
+}

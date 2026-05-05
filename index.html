@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asilya Barlas</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body>
+<style>
+  #selected-work .selected-work__grid .selected-work__media {
+    width: 432px;
+    height: 324px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #selected-work .selected-work__grid .selected-work__image {
+    width: 432px;
+    height: 324px;
+    display: block;
+  }
+</style>
+
+<header class="site-header">
+  <nav class="site-header__nav" aria-label="Primary">
+    <a href="#hero" class="site-header__logo">Asilya Barlas</a>
+    <ul class="site-header__nav-list">
+      <li><a href="#selected-work">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="hero" class="hero" aria-labelledby="hero-title">
+    <div class="hero__content">
+      <span class="hero__label">UI/UX design and front-end development</span>
+
+      <h1 id="hero-title" class="hero__title">
+        Designing and building high-quality digital experiences.
+      </h1>
+
+      <p class="hero__text">
+        I design and develop modern websites and interfaces that are fast, scalable, and built to perform. From concept to launch, every project focuses on clarity, usability, and measurable results.
+      </p>
+
+      <a class="hero__cta" href="#selected-work">View selected work</a>
+    </div>
+  </section>
+
+  <section id="animated-mockup" class="mockup-showcase">
+    <div class="mockup-showcase__content">
+      <img
+        class="mockup-showcase__image"
+        src="assets/images/home-mockup-primary.webp"
+        alt=""
+        data-animate="mockup-left"
+      />
+      <img
+        class="mockup-showcase__image"
+        src="assets/images/home-mockup-secondary.webp"
+        alt=""
+        data-animate="mockup-right"
+      />
+    </div>
+  </section>
+
+  <section id="development" class="development" aria-labelledby="development-title">
+    <div class="development__inner">
+      <pre class="development__code-block" data-animate="code-typing" aria-hidden="true" role="presentation"><code class="development__code" data-lang="css">.hero {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  gap: 80px;
+}
+
+.hero__title {
+  font-size: 64px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.phone {
+  transform: translateY(120px);
+  opacity: 0;
+  filter: drop-shadow(0 32px 80px rgba(0,0,0,0.35));
+}</code></pre>
+
+      <div class="development__content" data-animate="fade-up">
+        <span class="development__label">Development</span>
+        <h2 id="development-title" class="development__title">Production-ready front-end development.</h2>
+        <p class="development__subtitle">
+          Modern websites built with scalable front-end architecture and clean, maintainable code.
+        </p>
+        <div class="development__text">
+          <p>
+            I develop high-quality web interfaces using modern front-end technologies and production-level coding standards.
+          </p>
+          <p>
+            From responsive layouts to interactive UI systems, every component is written with performance, structure and long-term maintainability in mind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design" class="design" aria-labelledby="design-title">
+    <div class="design__pattern" aria-hidden="true" data-animate="design-pattern">
+      <div class="design__pattern-row" data-direction="left">A Ж β カ M Ω σ D Я α サ φ N B λ Ю あ π H Ф γ L タ μ E V Ω Ж α K σ β ナ C Я π φ R λ あ S Ф γ U Ω カ β T μ Ж D σ Я α マ N φ Ω L β あ Q Ж γ サ π W Ф μ Ω α Я Z σ タ β Ж λ M φ Ω あ C γ Я D μ サ σ H Ω β フ L π α Ж N φ Я U β Ω γ あ σ M λ Я タ Ж π φ α Ω S β Ф μ R あ γ Я Ω σ K λ φ Ж タ N β Ω γ U あ π σ Я Ф α M λ Ω β サ Ж φ Q γ あ σ Я T π μ Ω β フ</div>
+      <div class="design__pattern-row" data-direction="right">N Ж α L φ σ Я あ γ Ω R β π Ж μ タ Ω C σ Я α フ L γ β Ω π N Ж φ あ μ σ Я D Ω β γ タ φ K π あ Ж λ Ω Я σ β U フ μ γ Ω L φ π Я あ N σ Ж β Ω C γ φ μ π タ Я σ Ω あ λ Ж β R φ γ Ω μ π σ Я K フ β Ж あ Ω λ γ φ M π Я σ β タ Ω μ L Ж あ γ φ π σ Я Ω β</div>
+      <div class="design__pattern-row" data-direction="left">N フ μ γ Ω R λ π Ж σ あ φ β Ω Я タ μ γ K Ω σ π φ Ж β あ L μ Я γ Ω σ π フ β Ж φ R λ あ μ σ Ω Я γ π φ N β Ж タ μ Ω σ あ K φ Я γ Ω π λ β Ж μ フ σ Ω あ φ Я γ N π Ω β Ж タ μ σ あ φ λ Я γ R Ω π β Ж μ σ フ あ φ K Ω γ π Я λ β Ж σ μ あ φ Ω N γ π β Ж タ μ σ あ</div>
+      <div class="design__pattern-row" data-direction="right">Я φ Ω λ γ R π β Ж σ μ フ あ Ω φ Я γ K π λ β Ж μ σ あ Ω N φ γ π Я β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ φ Я K Ω γ π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ</div>
+      <div class="design__pattern-row" data-direction="left">あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ サ</div>
+      <div class="design__pattern-row" data-direction="right">A Ж β カ M Ω σ D Я α サ φ N B λ Ю あ π H Ф γ L タ μ E V Ω Ж α K σ β ナ C Я π φ R λ あ S Ф γ U Ω カ β T μ Ж D σ Я α マ N φ Ω L β あ Q Ж γ サ π W Ф μ Ω α Я Z σ タ β Ж λ M φ Ω あ C γ Я D μ サ σ H Ω β フ L π α Ж N φ Я U β Ω γ あ σ M λ Я タ Ж π φ α Ω</div>
+      <div class="design__pattern-row" data-direction="left">S β Ф μ R あ γ Я Ω σ K λ φ Ж タ N β Ω γ U あ π σ Я Ф α M λ Ω β サ Ж φ Q γ あ σ Я T π μ Ω β フ N Ж α L φ σ Я あ γ Ω R β π Ж μ タ Ω C σ Я α フ L γ β Ω π N Ж φ あ μ σ Я D Ω β γ タ φ K π あ Ж λ Ω Я σ β U フ μ γ Ω L φ π Я あ N σ Ж β Ω C γ φ μ π タ Я σ Ω あ λ Ж β R</div>
+      <div class="design__pattern-row" data-direction="right">φ γ Ω μ π σ Я K フ β Ж あ Ω λ γ φ M π Я σ β タ Ω μ L Ж あ γ φ π σ Я Ω β N フ μ γ Ω R λ π Ж σ あ φ β Ω Я タ μ γ K Ω σ π φ Ж β あ L μ Я γ Ω σ π フ β Ж φ R λ あ μ σ Ω Я γ π φ N β Ж タ μ Ω σ あ K φ Я γ Ω π λ β Ж μ フ σ Ω あ φ Я γ N π Ω β Ж タ μ σ あ</div>
+      <div class="design__pattern-row" data-direction="left">φ λ Я γ R Ω π β Ж μ σ フ あ φ K Ω γ π Я λ β Ж σ μ あ φ Ω N γ π β Ж タ μ σ あ Я φ Ω λ γ R π β Ж σ μ フ あ Ω φ Я γ K π λ β Ж μ σ あ Ω N φ γ π Я β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ φ Я K Ω γ π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ</div>
+      <div class="design__pattern-row" data-direction="right">あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ サ</div>
+      <div class="design__pattern-row" data-direction="left">A Ж β カ M Ω σ D Я α サ φ N B λ Ю あ π H Ф γ L タ μ E V Ω Ж α K σ β ナ C Я π φ R λ あ S Ф γ U Ω カ β T μ Ж D σ Я α マ N φ Ω L β あ Q Ж γ サ π W Ф μ Ω α Я Z σ タ β Ж λ M φ Ω あ C γ Я D μ サ σ H Ω β フ L π α Ж N φ Я U β Ω γ あ σ M λ Я タ Ж π φ α Ω S β Ф μ</div>
+      <div class="design__pattern-row" data-direction="right">R あ γ Я Ω σ K λ φ Ж タ N β Ω γ U あ π σ Я Ф α M λ Ω β サ Ж φ Q γ あ σ Я T π μ Ω β フ N Ж α L φ σ Я あ γ Ω R β π Ж μ タ Ω C σ Я α フ L γ β Ω π N Ж φ あ μ σ Я D Ω β γ タ φ K π あ Ж λ Ω Я σ β U フ μ γ Ω L φ π Я あ N σ Ж β Ω C γ φ μ π タ Я σ Ω あ λ Ж β R φ γ Ω μ</div>
+      <div class="design__pattern-row" data-direction="left">π σ Я K フ β Ж あ Ω λ γ φ M π Я σ β タ Ω μ L Ж あ γ φ π σ Я Ω β N フ μ γ Ω R λ π Ж σ あ φ β Ω Я タ μ γ K Ω σ π φ Ж β あ L μ Я γ Ω σ π フ β Ж φ R λ あ μ σ Ω Я γ π φ N β Ж タ μ Ω σ あ K φ Я γ Ω π λ β Ж μ フ σ Ω あ φ Я γ N π Ω β Ж タ μ σ あ φ λ Я γ R Ω π β</div>
+      <div class="design__pattern-row" data-direction="right">Ж μ σ フ あ φ K Ω γ π Я λ β Ж σ μ あ φ Ω N γ π β Ж タ μ σ あ Я φ Ω λ γ R π β Ж σ μ フ あ Ω φ Я γ K π λ β Ж μ σ あ Ω N φ γ π Я β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ φ Я K Ω γ π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ</div>
+      <div class="design__pattern-row" data-direction="left">N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ N φ γ Я π β Ж タ μ σ あ Ω λ φ R γ π β Ж μ σ フ あ Ω φ Я γ K π λ β Ж μ σ Ω あ サ</div>
+      <div class="design__pattern-row" data-direction="right">A Ж β カ M Ω σ D Я α サ φ N B λ Ю あ π H Ф γ L タ μ E V Ω Ж α K σ β ナ C Я π φ R λ あ S Ф γ U Ω カ β T μ Ж D σ Я α マ N φ Ω L β あ Q Ж γ サ π W Ф μ Ω α Я Z σ タ β Ж λ M φ Ω あ C γ Я D μ サ σ H Ω β フ L π α Ж N φ Я U β Ω γ あ σ M λ Я タ Ж π φ α Ω S β Ф μ R あ γ Я Ω σ</div>
+    </div>
+
+    <div class="design__content" data-animate="fade-up">
+      <span class="design__label">Design</span>
+      <h2 id="design-title" class="design__title">Systematic digital design.</h2>
+      <p class="design__subtitle">Design is the structure behind every digital product.</p>
+      <div class="design__text">
+        <p>
+          Good design is not decoration. It is the system that organizes content, interaction and visual hierarchy.
+        </p>
+        <p>
+          Every interface I design is built with structure in mind — grid, typography, spacing and consistent design systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="selected-work" class="selected-work" aria-labelledby="selected-work-title">
+    <div class="selected-work__header" data-animate="fade-up">
+      <span class="selected-work__label">Selected work</span>
+      <h2 id="selected-work-title" class="selected-work__title">Selected work and case studies.</h2>
+      <p class="selected-work__subtitle">Design is the structure behind every digital product.</p>
+    </div>
+
+    <div class="selected-work__grid" data-animate="fade-up">
+      <article class="selected-work__card selected-work__card--active" data-animate="work-card">
+        <div class="selected-work__media">
+          <img
+            class="selected-work__image"
+            src="assets/images/project-aurelion-cover.webp"
+            alt=""
+          />
+        </div>
+        <div class="selected-work__card-content">
+          <span class="selected-work__card-label">Aurelion project</span>
+          <h3 class="selected-work__card-title">Enterprise digital platform</h3>
+          <p class="selected-work__card-text">
+            A fully designed and developed platform covering UI systems, frontend architecture, and scalable structure.
+          </p>
+          <a class="selected-work__card-cta" href="case-study.html">View case study</a>
+        </div>
+      </article>
+
+      <article class="selected-work__card selected-work__card--coming-soon" data-animate="work-card">
+        <div class="selected-work__media">
+          <img
+            class="selected-work__image"
+            src="assets/images/project-velories-cover.webp"
+            alt=""
+          />
+        </div>
+        <div class="selected-work__coming-soon">Coming soon</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="about__content" data-animate="fade-up">
+      <span class="about__label">About</span>
+      <h2 id="about-title" class="about__title">Crafting digital products through design and code.</h2>
+      <p class="about__text">
+        I focus on building digital experiences where thoughtful design and precise front-end development work together. Each project is approached with attention to detail, clarity and long-term usability.
+      </p>
+    </div>
+  </section>
+
+  <section id="process" class="process" aria-labelledby="process-title">
+    <div class="process__inner">
+      <span class="process__label">PROCESS</span>
+      <h2 id="process-title" class="process__title">Process</h2>
+
+      <div class="process__timeline" data-animate="process-timeline">
+        <div class="process__line" aria-hidden="true"></div>
+        <div class="process__indicator" aria-hidden="true" data-animate="process-indicator"></div>
+
+        <ol class="process__list">
+          <li class="process__item process__item--right" data-animate="process-item">
+            <span class="process__number">01</span>
+            <h3 class="process__item-title">Discovery</h3>
+            <p class="process__item-text">
+              Understanding the product, the audience and the business goals before defining any visual or technical direction.
+            </p>
+          </li>
+
+          <li class="process__item process__item--left" data-animate="process-item">
+            <span class="process__number">02</span>
+            <h3 class="process__item-title">Design</h3>
+            <p class="process__item-text">
+              Creating structured interface systems where typography, layout and visual hierarchy communicate ideas clearly.
+            </p>
+          </li>
+
+          <li class="process__item process__item--right" data-animate="process-item">
+            <span class="process__number">03</span>
+            <h3 class="process__item-title">Development</h3>
+            <p class="process__item-text">
+              Translating design into precise front-end code with clean structure, performance and long-term scalability.
+            </p>
+          </li>
+
+          <li class="process__item process__item--left" data-animate="process-item">
+            <span class="process__number">04</span>
+            <h3 class="process__item-title">Delivery</h3>
+            <p class="process__item-text">
+              Refining the final product and preparing a reliable interface ready to be launched and used in real environments.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <h3 class="site-footer__title">Web design &amp; front-end development</h3>
+
+      <div class="site-footer__columns">
+        <nav class="site-footer__column site-footer__nav" aria-label="Footer navigation">
+          <span class="site-footer__column-title">Navigation</span>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="#selected-work">Projects</a></li>
+            <li><a class="site-footer__link" href="#about">About</a></li>
+            <li><a class="site-footer__link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__column site-footer__nav" aria-label="Footer contact">
+          <span class="site-footer__column-title">Contact</span>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="mailto:asilyabarlas@gmail.com">asilyabarlas@gmail.com</a></li>
+            <li><a class="site-footer__link" href="#">LinkedIn</a></li>
+            <li><a class="site-footer__link" href="#">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="site-footer__brand-row">
+      <a href="#hero" class="site-footer__logo">Asilya Barlas</a>
+      <a href="#selected-work" class="site-footer__cta">View selected work</a>
+    </div>
+
+    <div class="site-footer__divider" aria-hidden="true"></div>
+
+    <div class="site-footer__bottom">
+      <ul class="site-footer__legal">
+        <li><a class="site-footer__link" href="terms.html">Terms</a></li>
+        <li><a class="site-footer__link" href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a class="site-footer__link" href="cookie-policy.html">Cookie Settings</a></li>
+      </ul>
+      <p class="site-footer__copyright">© 2026 Asilya Barlas</p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

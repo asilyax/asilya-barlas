@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="index.html#hero" class="site-header__logo">Asilya Barlas</a>
+        <ul class="site-header__nav-list">
+          <li><a href="index.html#selected-work">Projects</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contact-page">
+      <section class="contact-section" id="contact">
+        <div class="contact-section__default">
+          <div class="contact-section__left">
+            <h1 class="contact-section__title">Let’s Build Something Precise.</h1>
+          </div>
+
+          <div class="contact-section__right">
+            <form class="contact-form" action="#" method="post">
+              <div class="contact-form__header">
+                <h2 class="contact-form__title">Start a Project</h2>
+                <p class="contact-form__description">
+                  Tell Me A Little About What You’re Building.
+                </p>
+              </div>
+
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="name">Name</label>
+                <input
+                  class="contact-form__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                />
+              </div>
+
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="email">Email</label>
+                <input
+                  class="contact-form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="project-type">Project Type</label>
+                <input
+                  class="contact-form__input"
+                  type="text"
+                  id="project-type"
+                  name="project_type"
+                  placeholder="Website, landing page, portfolio…"
+                />
+              </div>
+
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="budget-range">Budget Range</label>
+                <input
+                  class="contact-form__input"
+                  type="text"
+                  id="budget-range"
+                  name="budget_range"
+                  placeholder="$500–$1k, $1k–$3k…"
+                />
+              </div>
+
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="message">Message</label>
+                <textarea
+                  class="contact-form__textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your project…"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="cta cta--primary">Start Project →</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="contact-section__success" hidden>
+          <div class="contact-thanks-card">
+            <p class="contact-thanks-card__label">MESSAGE RECEIVED</p>
+            <h2 class="contact-thanks-card__title">Thank You.</h2>
+            <p class="contact-thanks-card__subtitle">
+              Your message has been received. I’ll get back to you as soon as possible.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <h3 class="site-footer__title">WEB DESIGN &amp; FRONT-END DEVELOPMENT</h3>
+
+          <div class="site-footer__columns">
+            <nav class="site-footer__column site-footer__nav" aria-label="Footer navigation">
+              <span class="site-footer__column-title">NAVIGATION</span>
+              <ul class="site-footer__list">
+                <li><a class="site-footer__link" href="index.html#selected-work">Projects</a></li>
+                <li><a class="site-footer__link" href="index.html#about">About</a></li>
+                <li><a class="site-footer__link" href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+
+            <nav class="site-footer__column site-footer__nav" aria-label="Footer contact">
+              <span class="site-footer__column-title">CONTACT</span>
+              <ul class="site-footer__list">
+                <li><a class="site-footer__link" href="mailto:asilyabarlas@gmail.com">asilyabarlas@gmail.com</a></li>
+                <li><a class="site-footer__link" href="#">LinkedIn</a></li>
+                <li><a class="site-footer__link" href="#">GitHub</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="site-footer__brand-row">
+          <a href="index.html#hero" class="site-footer__logo">Asilya Barlas</a>
+          <a href="index.html#selected-work" class="site-footer__cta">View Selected Work</a>
+        </div>
+
+        <div class="site-footer__divider" aria-hidden="true"></div>
+
+        <div class="site-footer__bottom">
+          <ul class="site-footer__legal">
+            <li><a class="site-footer__link" href="legal/terms.html">Terms</a></li>
+            <li><a class="site-footer__link" href="legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a class="site-footer__link" href="legal/cookie-policy.html">Cookie Settings</a></li>
+          </ul>
+          <p class="site-footer__copyright">© 2026 Asilya Barlas</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
