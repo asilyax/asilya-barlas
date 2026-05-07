@@ -1,0 +1,89 @@
+/* Global page wrapper behavior */
+main {
+  display: block;
+  width: 100%;
+}
+
+main,
+.section,
+.container,
+.container-narrow {
+  max-width: 100%;
+}
+
+/* Container system */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  box-sizing: border-box;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-max-width);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* Section base */
+.section {
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
+}
+
+/* Optional section spacing helpers */
+.section--spacing-small {
+  padding-block: var(--section-spacing-small);
+}
+
+.section--spacing-medium {
+  padding-block: var(--section-spacing-medium);
+}
+
+.section--spacing-large {
+  padding-block: var(--section-spacing-large);
+}
+
+/* Full-screen helper that can still grow with content */
+.section--full-screen {
+  min-height: 100svh;
+}
+
+/* Generic layout helpers */
+.layout-grid {
+  display: grid;
+}
+
+.layout-flex {
+  display: flex;
+}
+
+.layout-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.layout-center {
+  display: grid;
+  place-items: center;
+}
+
+/* Responsive layout behavior */
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--space-48);
+  }
+
+  .layout-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding-inline: var(--space-24);
+  }
+
+}

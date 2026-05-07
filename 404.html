@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/variables.css" />
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/utilities.css" />
+    <link rel="stylesheet" href="styles/components.css" />
   </head>
   <body>
 <header class="site-header">
@@ -18,6 +19,20 @@
       <li><a href="index.html#about">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <input class="site-header__menu-toggle" type="checkbox" id="site-menu-toggle" aria-label="Toggle mobile menu" />
+    <label class="site-header__menu-button" for="site-menu-toggle" aria-hidden="true">
+      <span class="site-header__menu-line"></span>
+      <span class="site-header__menu-line"></span>
+      <span class="site-header__menu-line"></span>
+    </label>
+    <div class="site-header__mobile-menu" aria-label="Mobile navigation">
+      <ul class="site-header__mobile-menu-list">
+        <li><a class="site-header__mobile-menu-link" href="index.html#selected-work">Projects</a></li>
+        <li><a class="site-header__mobile-menu-link" href="index.html#about">About</a></li>
+        <li><a class="site-header__mobile-menu-link" href="contact.html">Contact</a></li>
+      </ul>
+      <a class="cta cta--primary site-header__mobile-cta" href="index.html#selected-work">View Selected Work</a>
+    </div>
   </nav>
 </header>
 
@@ -63,7 +78,7 @@
 
     <div class="site-footer__brand-row">
       <a href="index.html#hero" class="site-footer__logo">Asilya Barlas</a>
-      <a href="index.html#selected-work" class="site-footer__cta">View Selected Work</a>
+      <a href="index.html#selected-work" class="cta cta--primary site-footer__cta">View Selected Work</a>
     </div>
 
     <div class="site-footer__divider" aria-hidden="true"></div>
