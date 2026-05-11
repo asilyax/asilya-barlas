@@ -1,0 +1,182 @@
+/* Home page — section layout only. Hero: single source for .home-hero spacing, gradient, and hero typography overrides. */
+
+.home-hero {
+  position: relative;
+  z-index: var(--z-base);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 936px;
+  padding: 130px 96px 130px;
+  overflow: visible;
+  background-color: var(--background-primary);
+}
+
+/*
+ * Side glows: circle radii unchanged; square background-size (2r × 2r) so the radial
+ * is never non-uniformly stretched (no 100% 100%). Pseudo box at least 2r to avoid clip.
+ * L: at -3% 70%; R: at calc(103% - 25px) calc(70% - 100px).
+ */
+.home-hero::before,
+.home-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  bottom: 0;
+}
+
+.home-hero::before {
+  left: 0;
+  --hero-glow-r: min(calc(48vmin + 130px), 770px);
+  width: max(min(98vw, 1480px), calc(2 * var(--hero-glow-r)));
+  height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
+  opacity: 0.6;
+  background-image: radial-gradient(
+    circle var(--hero-glow-r) at -3% 70%,
+    rgba(246, 241, 231, 0.13) 0%,
+    rgba(231, 224, 228, 0.06) 34%,
+    rgba(231, 224, 228, 0.028) 62%,
+    rgba(231, 224, 228, 0.008) 80%,
+    rgba(207, 198, 187, 0) 97%
+  );
+  background-size: calc(2 * var(--hero-glow-r)) calc(2 * var(--hero-glow-r));
+  background-position: left bottom;
+}
+
+.home-hero::after {
+  right: 0;
+  --hero-glow-r: min(calc(48vmin + 230px), 870px);
+  width: max(min(98vw, 1480px), calc(2 * var(--hero-glow-r)));
+  height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
+  opacity: 0.6;
+  background-image: radial-gradient(
+    circle var(--hero-glow-r) at calc(103% - 25px) calc(70% - 100px),
+    rgba(246, 241, 231, 0.13) 0%,
+    rgba(231, 224, 228, 0.06) 34%,
+    rgba(231, 224, 228, 0.028) 62%,
+    rgba(231, 224, 228, 0.008) 80%,
+    rgba(207, 198, 187, 0) 97%
+  );
+  background-size: calc(2 * var(--hero-glow-r)) calc(2 * var(--hero-glow-r));
+  background-position: right bottom;
+}
+
+.home-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero .hero__label {
+  max-width: 480px;
+}
+
+.home-hero .hero__title {
+  max-width: 670px;
+}
+
+.home-hero .hero__text {
+  max-width: 560px;
+}
+
+.home-hero .hero__label + .hero__title {
+  margin-top: 16px;
+}
+
+.home-hero .hero__title + .hero__text {
+  margin-top: 32px;
+}
+
+.home-hero .hero__text + .hero__cta {
+  margin-top: 56px;
+}
+
+@media (max-width: 1024px) {
+  .home-hero {
+    min-height: 918px;
+    padding: 180px 48px 200px;
+  }
+
+  .home-hero::before {
+    width: max(min(100vw, 1120px), calc(2 * var(--hero-glow-r)));
+    height: max(min(88vh, 860px), calc(2 * var(--hero-glow-r)));
+  }
+
+  .home-hero::after {
+    width: max(min(100vw, 1120px), calc(2 * var(--hero-glow-r)));
+    height: max(min(88vh, 860px), calc(2 * var(--hero-glow-r)));
+  }
+
+  .home-hero .hero__label {
+    max-width: none;
+  }
+
+  .home-hero .hero__title {
+    max-width: 550px;
+    font-size: 52px;
+    line-height: 60px;
+  }
+
+  .home-hero .hero__text {
+    max-width: 530px;
+    font-size: var(--font-size-nav);
+    line-height: var(--space-24);
+  }
+
+  .home-hero .hero__title + .hero__text {
+    margin-top: 28px;
+  }
+
+  .home-hero .hero__text + .hero__cta {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    min-height: 0;
+    padding: 132px 24px;
+  }
+
+  .home-hero::before {
+    width: max(min(100vw, 620px), calc(2 * var(--hero-glow-r)));
+    height: max(min(85vh, 600px), calc(2 * var(--hero-glow-r)));
+  }
+
+  .home-hero::after {
+    width: max(min(100vw, 620px), calc(2 * var(--hero-glow-r)));
+    height: max(min(85vh, 600px), calc(2 * var(--hero-glow-r)));
+  }
+
+  .home-hero .hero__text {
+    max-width: min(430px, 100%);
+  }
+
+  .home-hero .hero__title {
+    max-width: 342px;
+  }
+
+  .home-hero .hero__label + .hero__title {
+    margin-top: 14px;
+  }
+
+  .home-hero .hero__title + .hero__text {
+    margin-top: 24px;
+  }
+
+  .home-hero .hero__text + .hero__cta {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-hero .hero__label {
+    font-size: 12px;
+    line-height: var(--space-20);
+  }
+
+  .home-hero .hero__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

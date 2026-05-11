@@ -1,0 +1,28 @@
+---
+description: Project responsive breakpoint standard for CSS files
+globs: **/*.css
+alwaysApply: false
+---
+
+# Responsive Breakpoints
+
+Use this breakpoint system for all project CSS:
+
+- Desktop default: `1025px` and up.
+- Tablet: `@media (max-width: 1024px)`.
+- Mobile: `@media (max-width: 640px)`.
+- Small mobile refinements: `@media (max-width: 390px)`.
+
+Spacing convention:
+
+- Desktop side spacing: `96px`.
+- Tablet side spacing: `48px`.
+- Mobile side spacing: `24px`.
+
+CTA convention:
+
+- Reusable CTAs should use the centralized mobile CTA rule in `styles/components.css`.
+- At `max-width: 640px`, mobile CTAs should be `width: calc(100vw - 48px)` and centered with `margin-inline: auto`.
+- Avoid section-specific mobile CTA widths unless explicitly requested.
+
+Do not introduce `768px` as a project breakpoint. If a section needs responsive behavior that used to live at `768px`, move it to either `1024px` for tablet or `640px` for mobile based on the intended layout.

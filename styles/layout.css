@@ -71,7 +71,7 @@ main,
 }
 
 /* Responsive layout behavior */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     padding-inline: var(--space-48);
   }
@@ -81,7 +81,7 @@ main,
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 640px) {
   .container {
     padding-inline: var(--space-24);
   }
