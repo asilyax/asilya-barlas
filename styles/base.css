@@ -167,6 +167,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body:has(.site-header) {
+  padding-top: var(--site-header-height);
+}
+
+html:has(.site-header) {
+  scroll-padding-top: var(--site-header-height);
+}
+
 h1,
 h2,
 h3,
