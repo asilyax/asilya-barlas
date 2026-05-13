@@ -130,18 +130,33 @@
   --easing-smooth: ease-in-out;
   --easing-premium: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* 15. Z-index tokens */
+  /* 15. Layout — fixed primary nav (see components .site-header) */
+  --site-header-height: 88px;
+
+  /* 16. Z-index tokens */
   --z-base: 0;
   --z-content: 100;
   --z-header: 500;
   --z-overlay: 1000;
   --z-modal: 2000;
 
-  /* 16. Breakpoint tokens */
+  /* 17. Breakpoint tokens */
   --breakpoint-small-mobile: 390px;
   --breakpoint-mobile: 640px;
   --breakpoint-tablet: 1024px;
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1280px;
   --breakpoint-wide: 1440px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --site-header-height: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --site-header-height: 72px;
+  }
 }

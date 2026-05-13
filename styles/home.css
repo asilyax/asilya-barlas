@@ -13,8 +13,8 @@
 
 /*
  * Side glows: circle radii unchanged; square background-size (2r × 2r) so the radial
- * is never non-uniformly stretched (no 100% 100%). Pseudo box at least 2r to avoid clip.
- * L: at -3% 70%; R: at calc(103% - 25px) calc(70% - 100px).
+ * is never non-uniformly stretched. Centers sit on the lower band of each vertical edge
+ * (rim light), not bottom-center.
  */
 .home-hero::before,
 .home-hero::after {
@@ -28,12 +28,12 @@
 
 .home-hero::before {
   left: 0;
-  --hero-glow-r: min(calc(48vmin + 130px), 770px);
+  --hero-glow-r: calc(min(calc(48vmin + 130px), 770px) * 0.85);
   width: max(min(98vw, 1480px), calc(2 * var(--hero-glow-r)));
   height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
-  opacity: 0.6;
+  opacity: 0.51;
   background-image: radial-gradient(
-    circle var(--hero-glow-r) at -3% 70%,
+    circle var(--hero-glow-r) at 2% 88%,
     rgba(246, 241, 231, 0.13) 0%,
     rgba(231, 224, 228, 0.06) 34%,
     rgba(231, 224, 228, 0.028) 62%,
@@ -51,7 +51,7 @@
   height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
   opacity: 0.6;
   background-image: radial-gradient(
-    circle var(--hero-glow-r) at calc(103% - 25px) calc(70% - 100px),
+    circle var(--hero-glow-r) at 98% 88%,
     rgba(246, 241, 231, 0.13) 0%,
     rgba(231, 224, 228, 0.06) 34%,
     rgba(231, 224, 228, 0.028) 62%,
@@ -178,5 +178,158 @@
   .home-hero .hero__title {
     font-size: 36px;
     line-height: 44px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Home mockup section — final static layout only (no animation).           */
+/* Rim glows: circle radius per side; square background-size (2r × 2r) so   */
+/* the radial is not stretched inside the pseudo box (avoids hard edges).   */
+/* -------------------------------------------------------------------------- */
+
+.mockup-showcase {
+  position: relative;
+  z-index: var(--z-base);
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: visible;
+  background-color: var(--background-primary);
+}
+
+.mockup-showcase::before,
+.mockup-showcase::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  bottom: 0;
+}
+
+.mockup-showcase::before {
+  left: 0;
+  --mockup-glow-r: calc(min(calc(46vmin + 90px), 680px) * 1.23 * 1.1);
+  width: max(min(98vw, 1480px), calc(2 * var(--mockup-glow-r)));
+  height: max(min(88vh, 960px), calc(2 * var(--mockup-glow-r)));
+  opacity: 0.48;
+  background-image: radial-gradient(
+    circle var(--mockup-glow-r) at 2% 88%,
+    rgba(246, 241, 231, 0.14) 0%,
+    rgba(231, 224, 228, 0.07) 32%,
+    rgba(231, 224, 228, 0.028) 58%,
+    rgba(231, 224, 228, 0.01) 78%,
+    rgba(207, 198, 187, 0) 100%
+  );
+  background-size: calc(2 * var(--mockup-glow-r)) calc(2 * var(--mockup-glow-r));
+  background-position: left bottom;
+}
+
+.mockup-showcase::after {
+  right: 0;
+  --mockup-glow-r: calc(min(calc(46vmin + 170px), 780px) * 1.23 * 1.1);
+  width: max(min(98vw, 1480px), calc(2 * var(--mockup-glow-r)));
+  height: max(min(88vh, 960px), calc(2 * var(--mockup-glow-r)));
+  opacity: 0.48;
+  background-image: radial-gradient(
+    circle var(--mockup-glow-r) at 98% 88%,
+    rgba(246, 241, 231, 0.14) 0%,
+    rgba(231, 224, 228, 0.07) 32%,
+    rgba(231, 224, 228, 0.028) 58%,
+    rgba(231, 224, 228, 0.01) 78%,
+    rgba(207, 198, 187, 0) 100%
+  );
+  background-size: calc(2 * var(--mockup-glow-r)) calc(2 * var(--mockup-glow-r));
+  background-position: right bottom;
+}
+
+.mockup-showcase__content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  min-height: calc(196px + 750px + 78px);
+  padding-bottom: 78px;
+}
+
+.mockup-showcase__image {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  object-position: bottom center;
+  transform-origin: bottom center;
+}
+
+.mockup-showcase__image--primary {
+  top: 196px;
+  left: calc((100% - 778px) / 2);
+  width: 365px;
+  height: 750px;
+  transform: rotate(0deg);
+}
+
+.mockup-showcase__image--secondary {
+  top: 184px;
+  left: calc((100% - 778px) / 2 + 365px + 48px);
+  width: 365px;
+  height: 750px;
+  transform: rotate(-2deg);
+}
+
+@media (max-width: 1024px) {
+  .mockup-showcase::before,
+  .mockup-showcase::after {
+    width: max(min(100vw, 1120px), calc(2 * var(--mockup-glow-r)));
+    height: max(min(88vh, 860px), calc(2 * var(--mockup-glow-r)));
+  }
+
+  .mockup-showcase__content {
+    min-height: calc(152px + 503.42px + 80px);
+    padding-bottom: 80px;
+  }
+
+  .mockup-showcase__image--primary {
+    top: 152px;
+    left: calc((100% - 534px) / 2);
+    width: 245px;
+    height: 503.42px;
+    transform: rotate(0deg);
+  }
+
+  .mockup-showcase__image--secondary {
+    top: 140px;
+    left: calc((100% - 534px) / 2 + 245px + 44px);
+    width: 245px;
+    height: 503.42px;
+    transform: rotate(-2deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .mockup-showcase::before,
+  .mockup-showcase::after {
+    width: max(min(100vw, 620px), calc(2 * var(--mockup-glow-r)));
+    height: max(min(85vh, 600px), calc(2 * var(--mockup-glow-r)));
+  }
+
+  .mockup-showcase__image--secondary {
+    display: none;
+  }
+
+  .mockup-showcase__content {
+    min-height: calc(72px + 702.74px + 70px);
+    padding: 72px 24px 70px;
+  }
+
+  .mockup-showcase__image--primary {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 342px;
+    height: 702.74px;
+    max-width: 100%;
+    margin-inline: auto;
+    transform: rotate(0deg);
   }
 }
