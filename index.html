@@ -12,22 +12,6 @@
     <link rel="stylesheet" href="styles/home.css" />
   </head>
   <body>
-<style>
-  #selected-work .selected-work__grid .selected-work__media {
-    width: 432px;
-    height: 324px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  #selected-work .selected-work__grid .selected-work__image {
-    width: 432px;
-    height: 324px;
-    display: block;
-  }
-</style>
 
 <header class="site-header">
   <nav class="site-header__nav" aria-label="Primary">
@@ -147,41 +131,52 @@
   </section>
 
   <section id="selected-work" class="selected-work" aria-labelledby="selected-work-title">
-    <div class="selected-work__header" data-animate="fade-up">
-      <span class="selected-work__label">Selected Work</span>
-      <h2 id="selected-work-title" class="selected-work__title">Selected Work and Case Studies.</h2>
-      <p class="selected-work__subtitle">Design Is the Structure Behind Every Digital Product.</p>
-    </div>
+    <div class="selected-work__inner">
+      <div class="selected-work__header" data-animate="fade-up">
+        <span class="selected-work__label">Selected Work</span>
+        <h2 id="selected-work-title" class="selected-work__title">Selected Work and Case Studies.</h2>
+        <p class="selected-work__subtitle">Design Is the Structure Behind Every Digital Product.</p>
+      </div>
 
-    <div class="selected-work__grid" data-animate="fade-up">
-      <article class="selected-work__card selected-work__card--active" data-animate="work-card">
-        <div class="selected-work__media">
-          <img
-            class="selected-work__image"
-            src="assets/images/project-aurelion-cover.webp"
-            alt=""
-          />
-        </div>
-        <div class="selected-work__card-content">
-          <span class="selected-work__card-label">Aurelion Project</span>
-          <h3 class="selected-work__card-title">Enterprise Digital Platform</h3>
-          <p class="selected-work__card-text">
-            A Fully Designed and Developed Platform Covering UI Systems, Frontend Architecture, and Scalable Structure.
-          </p>
-          <a class="selected-work__card-cta" href="case-study.html"><span>View Case Study</span></a>
-        </div>
-      </article>
+      <div class="selected-work__grid" data-animate="fade-up">
+        <article class="selected-work__card selected-work__card--active" data-animate="work-card">
+          <div class="selected-work__card-visual">
+            <div class="selected-work__media">
+              <img
+                class="selected-work__image"
+                src="assets/images/project-aurelion-cover.webp"
+                alt=""
+              />
+            </div>
+            <div class="selected-work__card-dim" aria-hidden="true"></div>
+            <div class="selected-work__card-content">
+              <span class="selected-work__card-label">Aurelion Project</span>
+              <h3 class="selected-work__card-title">Enterprise Digital Platform</h3>
+              <p class="selected-work__card-text">
+                A Fully Designed and Developed Platform Covering UI Systems, Frontend Architecture, and Scalable Structure.
+              </p>
+              <a class="selected-work__card-cta" href="case-study.html"><span>View Case Study</span></a>
+            </div>
+          </div>
+        </article>
 
-      <article class="selected-work__card selected-work__card--coming-soon" data-animate="work-card">
-        <div class="selected-work__media">
-          <img
-            class="selected-work__image"
-            src="assets/images/project-velories-cover.webp"
-            alt=""
-          />
-        </div>
-        <div class="selected-work__coming-soon">Coming Soon</div>
-      </article>
+        <article class="selected-work__card selected-work__card--coming-soon" data-animate="work-card">
+          <div class="selected-work__card-visual">
+            <div class="selected-work__media">
+              <img
+                class="selected-work__image"
+                src="assets/images/project-velories-cover.webp"
+                alt=""
+              />
+            </div>
+            <div class="selected-work__card-dim" aria-hidden="true"></div>
+            <h3 class="selected-work__card-title selected-work__coming-soon">Coming Soon</h3>
+            <div class="selected-work__card-content">
+              <span class="selected-work__card-label">Velories Project</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
