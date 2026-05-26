@@ -180,61 +180,74 @@
     </div>
   </section>
 
-  <section id="about" class="about" aria-labelledby="about-title">
-    <div class="about__content" data-animate="fade-up">
-      <span class="about__label">About</span>
-      <h2 id="about-title" class="about__title">Crafting Digital Products through Design and Code.</h2>
-      <p class="about__text">
-        I Focus on Building Digital Experiences Where Thoughtful Design and Precise Front-End Development Work Together. Each Project Is Approached With Attention to Detail, Clarity and Long-Term Usability.
-      </p>
-    </div>
-  </section>
-
-  <section id="process" class="process" aria-labelledby="process-title">
-    <div class="process__inner">
-      <span class="process__label">PROCESS</span>
-      <h2 id="process-title" class="process__title">Process</h2>
-
-      <div class="process__timeline" data-animate="process-timeline">
-        <div class="process__line" aria-hidden="true"></div>
-        <div class="process__indicator" aria-hidden="true" data-animate="process-indicator"></div>
-
-        <ol class="process__list">
-          <li class="process__item process__item--right" data-animate="process-item">
-            <span class="process__number">01</span>
-            <h3 class="process__item-title">Discovery</h3>
-            <p class="process__item-text">
-              Understanding the Product, the Audience and the Business Goals Before Defining Any Visual or Technical Direction.
-            </p>
-          </li>
-
-          <li class="process__item process__item--left" data-animate="process-item">
-            <span class="process__number">02</span>
-            <h3 class="process__item-title">Design</h3>
-            <p class="process__item-text">
-              Creating Structured Interface Systems Where Typography, Layout and Visual Hierarchy Communicate Ideas Clearly.
-            </p>
-          </li>
-
-          <li class="process__item process__item--right" data-animate="process-item">
-            <span class="process__number">03</span>
-            <h3 class="process__item-title">Development</h3>
-            <p class="process__item-text">
-              Translating Design into Precise Front-End Code With Clean Structure, Performance and Long-Term Scalability.
-            </p>
-          </li>
-
-          <li class="process__item process__item--left" data-animate="process-item">
-            <span class="process__number">04</span>
-            <h3 class="process__item-title">Delivery</h3>
-            <p class="process__item-text">
-              Refining the Final Product and Preparing a Reliable Interface Ready to Be Launched and Used in Real Environments.
-            </p>
-          </li>
-        </ol>
+  <div class="about-process">
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="about__content" data-animate="fade-up">
+        <span class="about__label">About</span>
+        <h2 id="about-title" class="about__title">Crafting Digital Products through Design and Code.</h2>
+        <p class="about__text">
+          I Focus on Building Digital Experiences Where Thoughtful Design and Precise Front-End Development Work Together. Each Project Is Approached With Attention to Detail, Clarity and Long-Term Usability.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="process" class="process" aria-labelledby="process-label">
+      <div class="process__inner">
+        <span id="process-label" class="process__label">PROCESS</span>
+
+        <div class="process__timeline" data-animate="process-timeline">
+          <div class="process__line" aria-hidden="true"></div>
+          <div class="process__line-active" aria-hidden="true"></div>
+          <button
+            type="button"
+            class="process__indicator"
+            aria-label="Process progress"
+            data-animate="process-indicator"
+          ></button>
+
+          <ol class="process__list">
+            <li class="process__item process__item--right process__item--step-1" data-animate="process-item">
+              <span class="process__number">01</span>
+              <h3 class="process__item-title">Discovery</h3>
+              <p class="process__item-text">
+                Understanding the Product, the Audience and the Business Goals Before Defining Any Visual or Technical Direction.
+              </p>
+            </li>
+
+            <li class="process__item process__item--left process__item--step-2" data-animate="process-item">
+              <span class="process__number">02</span>
+              <h3 class="process__item-title">Design</h3>
+              <p class="process__item-text">
+                Creating Structured Interface Systems Where Typography, Layout and Visual Hierarchy Communicate Ideas Clearly.
+              </p>
+            </li>
+
+            <li class="process__item process__item--right process__item--step-3" data-animate="process-item">
+              <span class="process__number">03</span>
+              <h3 class="process__item-title">Development</h3>
+              <p class="process__item-text">
+                Translating Design into Precise Front-End Code With Clean Structure, Performance and <span class="process__long-term-part">Long-</span><span class="process__long-term-rest">Term Scalability.</span>
+              </p>
+            </li>
+
+            <li class="process__item process__item--left process__item--step-4" data-animate="process-item">
+              <span class="process__number">04</span>
+              <h3 class="process__item-title">Delivery</h3>
+              <p class="process__item-text">
+                Refining the Final Product and Preparing a Reliable Interface Ready to Be Launched and Used in Real Environments.
+              </p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="process__rail">
+          <div class="process__rail-line" aria-hidden="true"></div>
+          <div class="process__rail-line-active" aria-hidden="true"></div>
+          <button type="button" class="process__rail-indicator" aria-label="Process progress"></button>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 
 <footer id="footer" class="site-footer">
@@ -281,5 +294,6 @@
   </div>
 </footer>
   <script src="scripts/navigation.js"></script>
+  <script src="scripts/process-indicator.js" defer></script>
   </body>
 </html>
