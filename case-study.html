@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/utilities.css" />
     <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/case-study.css" />
   </head>
   <body>
 <header class="site-header">
@@ -65,12 +66,19 @@
     </dl>
 
     <figure class="case-study-hero__media">
-      <img
-        src="assets/images/aurelion-case-study-hero2.webp"
-        alt=""
-        loading="eager"
-        decoding="async"
-      />
+      <picture>
+        <source
+          media="(max-width: 640px)"
+          srcset="assets/images/aurelion-case-study-hero-mobil.png"
+          type="image/png"
+        />
+        <img
+          src="assets/images/aurelion-case-study-hero2.webp"
+          alt=""
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
     </figure>
   </div>
 </section>
