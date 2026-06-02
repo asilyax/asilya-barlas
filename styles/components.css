@@ -348,8 +348,7 @@
 .outcome-section__label,
 .visual-system-section__label,
 .development-section__label,
-.results-section__label,
-.contact-thanks-card__label {
+.results-section__label {
   display: block;
   font-family: var(--font-family-primary);
   font-size: 13px;
@@ -361,8 +360,7 @@
 }
 
 .hero__title,
-.case-study-hero__title,
-.contact-section__title {
+.case-study-hero__title {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
@@ -654,150 +652,6 @@
   color: #7a8087;
 }
 
-/* Form */
-.contact-section__success {
-  width: 100%;
-  place-items: center;
-}
-
-.contact-section__success:not([hidden]) {
-  display: grid;
-  min-height: 780px;
-}
-
-.contact-form {
-  width: fit-content;
-  padding: var(--space-40);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.035);
-  text-align: left;
-}
-
-.contact-form__title {
-  margin: 0;
-  font-family: var(--font-family-primary);
-  font-size: 24px;
-  line-height: var(--space-28);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-subtitle);
-  color: #f4f7fb;
-}
-
-.contact-form__description {
-  margin: var(--space-8) 0 0;
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-nav);
-  line-height: var(--space-24);
-  font-weight: var(--font-weight-regular);
-  letter-spacing: var(--letter-spacing-subtitle);
-  color: rgba(174, 183, 194, 0.78);
-}
-
-.contact-form__field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-  margin-top: 18px;
-}
-
-.contact-form__header + .contact-form__field {
-  margin-top: var(--space-32);
-}
-
-.contact-form__label {
-  font-family: var(--font-family-primary);
-  font-size: 13px;
-  line-height: var(--space-20);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-subtitle);
-  color: rgba(174, 183, 194, 0.8);
-}
-
-.contact-form__input,
-.contact-form__textarea {
-  width: 440px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.018);
-  color: var(--text-primary);
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-nav);
-  line-height: var(--space-24);
-  font-weight: var(--font-weight-regular);
-  letter-spacing: var(--letter-spacing-subtitle);
-  outline: none;
-  transition:
-    border-color var(--transition-normal) var(--easing-premium),
-    background var(--transition-normal) var(--easing-premium);
-}
-
-.contact-form__input {
-  height: 48px;
-  padding-inline: var(--space-16);
-}
-
-.contact-form__textarea {
-  height: 136px;
-  padding: var(--space-16);
-  resize: vertical;
-}
-
-.contact-form__input::placeholder,
-.contact-form__textarea::placeholder {
-  color: rgba(174, 183, 194, 0.52);
-}
-
-.contact-form__input:focus,
-.contact-form__textarea:focus {
-  border-color: rgba(247, 246, 244, 0.35);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.contact-form .cta {
-  margin-top: var(--space-28);
-}
-
-.contact-thanks-card {
-  display: flex;
-  width: 580px;
-  height: 252px;
-  padding: var(--space-40);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.035);
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-}
-
-.contact-thanks-card__label {
-  line-height: var(--space-20);
-  color: rgba(174, 183, 194, 0.8);
-}
-
-.contact-thanks-card__title {
-  margin: var(--space-16) 0 0;
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-h2);
-  line-height: var(--line-height-h2);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-subtitle);
-  color: #f4f7fb;
-}
-
-.contact-thanks-card__subtitle {
-  max-width: 426px;
-  margin: var(--space-24) auto 0;
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-subtitle);
-  line-height: var(--line-height-subtitle);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--letter-spacing-subtitle);
-  color: rgba(174, 183, 194, 0.78);
-}
-
 @media (max-width: 1024px) {
   .site-footer {
     height: auto;
@@ -902,8 +756,7 @@
     line-height: var(--space-24);
   }
 
-  .case-study-hero__title,
-  .contact-section__title {
+  .case-study-hero__title {
     font-size: 52px;
     line-height: 60px;
   }
@@ -1003,36 +856,6 @@
     margin-top: 22px;
   }
 
-  .contact-form {
-    padding: var(--space-40) 36px;
-  }
-
-  .contact-form__input,
-  .contact-form__textarea {
-    width: 388px;
-  }
-
-  .contact-form__textarea {
-    height: 118px;
-    padding: 14px;
-  }
-
-  .contact-thanks-card {
-    width: 498px;
-    height: 228px;
-    padding-block: 36px;
-  }
-
-  .contact-thanks-card__title {
-    font-size: 36px;
-    line-height: 46px;
-  }
-
-  .contact-thanks-card__subtitle {
-    margin-top: 22px;
-    font-size: 17px;
-    line-height: 26px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1148,14 +971,12 @@
   .outcome-section__label,
   .visual-system-section__label,
   .development-section__label,
-  .results-section__label,
-  .contact-thanks-card__label {
+.results-section__label {
     font-size: 12px;
     line-height: var(--space-20);
   }
 
-  .case-study-hero__title,
-  .contact-section__title {
+  .case-study-hero__title {
     font-size: 36px;
     line-height: 44px;
   }
@@ -1265,50 +1086,4 @@
     margin-top: var(--space-20);
   }
 
-  .contact-form {
-    padding: var(--space-24) var(--space-16);
-  }
-
-  .contact-form__header + .contact-form__field {
-    margin-top: var(--space-28);
-  }
-
-  .contact-form__field {
-    gap: 6px;
-  }
-
-  .contact-form__input,
-  .contact-form__textarea {
-    width: 312px;
-  }
-
-  .contact-form__input {
-    height: 42px;
-  }
-
-  .contact-form__textarea {
-    height: 96px;
-  }
-
-  .contact-form .cta {
-    width: 312px;
-    margin-top: var(--space-24);
-  }
-
-  .contact-thanks-card {
-    width: 342px;
-    height: 240px;
-    padding: var(--space-32) var(--space-32) var(--space-40);
-  }
-
-  .contact-thanks-card__title {
-    margin-top: 14px;
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  .contact-thanks-card__subtitle {
-    max-width: 278px;
-    margin-top: var(--space-20);
-  }
 }
