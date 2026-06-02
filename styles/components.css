@@ -428,8 +428,7 @@
 .outcome-section__subtitle,
 .visual-system-section__subtitle,
 .development-section__subtitle,
-.results-section__subtitle,
-.not-found__subtitle {
+.results-section__subtitle {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-subtitle);
   line-height: var(--line-height-subtitle);
@@ -807,8 +806,7 @@
   .live-experience-section__text,
   .visual-system-section__subtitle,
   .development-section__subtitle,
-  .results-section__subtitle,
-  .not-found__subtitle {
+  .results-section__subtitle {
     font-size: 17px;
     line-height: 26px;
   }
@@ -1032,8 +1030,7 @@
   .outcome-section__subtitle,
   .visual-system-section__subtitle,
   .development-section__subtitle,
-  .results-section__subtitle,
-  .not-found__subtitle {
+  .results-section__subtitle {
     font-size: var(--font-size-body);
     line-height: var(--space-24);
   }
