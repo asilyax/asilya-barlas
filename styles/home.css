@@ -538,10 +538,12 @@
 }
 
 .development__code-block.is-code-typing {
+  -webkit-user-select: none;
   user-select: none;
 }
 
 .development__code-block.is-code-typing-complete {
+  -webkit-user-select: auto;
   user-select: auto;
 }
 
