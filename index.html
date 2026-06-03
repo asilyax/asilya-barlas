@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-intro-active">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +10,19 @@
     <link rel="stylesheet" href="styles/utilities.css" />
     <link rel="stylesheet" href="styles/components.css" />
     <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/intro.css" />
   </head>
   <body>
+
+<div class="site-intro" id="site-intro" aria-hidden="true">
+  <div class="site-intro__glow site-intro__glow--top-right" aria-hidden="true"></div>
+  <div class="site-intro__glow site-intro__glow--bottom-left" aria-hidden="true"></div>
+  <div class="site-intro__brand">
+    <p class="site-intro__logo">Asilya Barlas</p>
+    <span class="site-intro__spark site-intro__spark--large" aria-hidden="true"></span>
+    <span class="site-intro__spark site-intro__spark--small" aria-hidden="true"></span>
+  </div>
+</div>
 
 <header class="site-header">
   <nav class="site-header__nav" aria-label="Primary">
@@ -293,6 +304,7 @@
     </div>
   </div>
 </footer>
+  <script src="scripts/intro.js"></script>
   <script src="scripts/navigation.js"></script>
   <script src="scripts/process-indicator.js" defer></script>
   </body>

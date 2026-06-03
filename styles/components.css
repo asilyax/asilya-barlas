@@ -384,8 +384,7 @@
 .outcome-section__title,
 .visual-system-section__title,
 .development-section__title,
-.results-section__title,
-.legal-section__title {
+.results-section__title {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
@@ -402,9 +401,7 @@
 .outcome-section__item-title,
 .visual-system-section__item-title,
 .development-section__item-title,
-.results-section__item-title,
-.legal-section__subtitle,
-.legal-section__item-title {
+.results-section__item-title {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-h3);
   line-height: 34px;
@@ -451,8 +448,7 @@
 .outcome-section__item-text,
 .visual-system-section__item-text,
 .development-section__item-text,
-.results-section__item-text,
-.legal-section__text {
+.results-section__item-text {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-body);
   line-height: 26px;
@@ -773,8 +769,7 @@
   .outcome-section__title,
   .visual-system-section__title,
   .development-section__title,
-  .results-section__title,
-  .legal-section__title {
+  .results-section__title {
     font-size: 36px;
     line-height: 46px;
   }
@@ -787,9 +782,7 @@
   .outcome-section__item-title,
   .visual-system-section__item-title,
   .development-section__item-title,
-  .results-section__item-title,
-  .legal-section__subtitle,
-  .legal-section__item-title {
+  .results-section__item-title {
     font-size: 24px;
     line-height: 30px;
   }
@@ -823,8 +816,7 @@
   .approach-section__item-text,
   .visual-system-section__item-text,
   .development-section__item-text,
-  .results-section__item-text,
-  .legal-section__text {
+  .results-section__item-text {
     font-size: var(--font-size-nav);
     line-height: var(--space-24);
   }
@@ -994,8 +986,7 @@
   .outcome-section__title,
   .visual-system-section__title,
   .development-section__title,
-  .results-section__title,
-  .legal-section__title {
+  .results-section__title {
     font-size: 28px;
     line-height: 36px;
   }
@@ -1008,9 +999,7 @@
   .outcome-section__item-title,
   .visual-system-section__item-title,
   .development-section__item-title,
-  .results-section__item-title,
-  .legal-section__subtitle,
-  .legal-section__item-title {
+  .results-section__item-title {
     font-size: 22px;
     line-height: var(--space-28);
   }
