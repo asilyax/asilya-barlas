@@ -1236,7 +1236,8 @@
 }
 
 .process__timeline {
-  --process-progress: 0%;
+  --process-progress: 0;
+  --process-progress-y: 0px;
   --process-indicator-size: 14px;
   --process-active-gradient: linear-gradient(180deg, #525252 0%, #b8b8b8 100%);
   --process-active-end: #b8b8b8;
@@ -1264,13 +1265,16 @@
 
 .process__line-active {
   z-index: 1;
-  height: var(--process-progress);
+  height: 100%;
   background: var(--process-active-gradient);
+  transform: scaleY(var(--process-progress, 0));
+  transform-origin: top center;
+  will-change: transform;
 }
 
 .process__indicator {
   position: absolute;
-  top: var(--process-progress);
+  top: 0;
   left: 50%;
   z-index: 2;
   box-sizing: border-box;
@@ -1281,10 +1285,10 @@
   border: none;
   border-radius: 50%;
   background: var(--process-active-end);
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, calc(var(--process-progress-y, 0px) - 50%), 0);
   cursor: grab;
   touch-action: none;
-  will-change: top;
+  will-change: transform;
 }
 
 .process__indicator:active {
@@ -1429,11 +1433,12 @@
 
   .process__line-active {
     bottom: auto;
-    height: var(--process-progress);
+    height: 100%;
   }
 
   .process__indicator {
     position: absolute;
+    top: 0;
     left: 50%;
   }
 
@@ -1502,7 +1507,8 @@
 }
 
 .process__rail {
-  --process-progress: 0%;
+  --process-progress: 0;
+  --process-progress-y: 0px;
   --process-indicator-size: 10px;
   --process-active-gradient: linear-gradient(180deg, #525252 0%, #b8b8b8 100%);
   --process-active-end: #b8b8b8;
@@ -1527,13 +1533,16 @@
 
 .process__rail-line-active {
   z-index: 1;
-  height: var(--process-progress);
+  height: 100%;
   background: var(--process-active-gradient);
+  transform: scaleY(var(--process-progress, 0));
+  transform-origin: top center;
+  will-change: transform;
 }
 
 .process__rail-indicator {
   position: absolute;
-  top: var(--process-progress);
+  top: 0;
   left: 50%;
   z-index: 2;
   box-sizing: border-box;
@@ -1544,10 +1553,10 @@
   border: none;
   border-radius: 50%;
   background: var(--process-active-end);
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, calc(var(--process-progress-y, 0px) - 50%), 0);
   cursor: grab;
   touch-action: none;
-  will-change: top;
+  will-change: transform;
 }
 
 .process__rail-indicator:active {

@@ -2662,7 +2662,6 @@
     overflow-x: auto;
     scroll-padding-inline: calc((100% - 155px) / 2);
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     gap: 40px;
   }
 
@@ -2766,7 +2765,6 @@
     overflow-x: auto;
     scroll-padding-inline: calc((100% - 155px) / 2);
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     gap: 40px;
   }
 

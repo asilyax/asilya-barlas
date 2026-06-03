@@ -5,6 +5,7 @@
   const railIndicator = document.querySelector(".process__rail-indicator");
   const mobileQuery = window.matchMedia("(max-width: 640px)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const SMOOTHING = 0.22;
 
   if (!timeline && !rail) {
     return;
@@ -12,6 +13,9 @@
 
   let isDragging = false;
   let activeIndicator = null;
+  let displayProgress = 0;
+  let targetProgress = 0;
+  let animationFrameId = 0;
 
   function clamp(value, min, max) {
     return Math.min(max, Math.max(min, value));
@@ -27,6 +31,10 @@
     }
 
     return null;
+  }
+
+  function trackHeight(trackEl) {
+    return trackEl.offsetHeight || trackEl.getBoundingClientRect().height || 0;
   }
 
   function progressFromClientY(trackEl, clientY) {
@@ -50,8 +58,24 @@
     return clamp((anchor - rect.top) / rect.height, 0, 1);
   }
 
-  function setProgress(container, progress) {
-    container.style.setProperty("--process-progress", progress * 100 + "%");
+  function applyProgress(container, progress) {
+    const trackInfo = getTrack();
+    const track =
+      trackInfo && trackInfo.container === container
+        ? trackInfo.track
+        : container === timeline
+          ? timeline
+          : rail;
+    const height = track ? trackHeight(track) : 0;
+
+    container.style.setProperty("--process-progress", String(progress));
+    container.style.setProperty("--process-progress-y", progress * height + "px");
+  }
+
+  function setProgressImmediate(container, progress) {
+    displayProgress = progress;
+    targetProgress = progress;
+    applyProgress(container, progress);
   }
 
   function scrollForProgress(progress) {
@@ -71,8 +95,25 @@
     });
   }
 
-  function updateFromScroll() {
-    if (isDragging || reducedMotion.matches) {
+  function animationStep() {
+    animationFrameId = 0;
+
+    if (reducedMotion.matches) {
+      displayProgress = 0;
+      targetProgress = 0;
+
+      if (timeline) {
+        applyProgress(timeline, 0);
+      }
+
+      if (rail) {
+        applyProgress(rail, 0);
+      }
+
+      return;
+    }
+
+    if (isDragging) {
       return;
     }
 
@@ -82,7 +123,27 @@
       return;
     }
 
-    setProgress(trackInfo.container, progressFromScroll(trackInfo.track));
+    targetProgress = progressFromScroll(trackInfo.track);
+
+    const delta = targetProgress - displayProgress;
+
+    if (Math.abs(delta) > 0.0008) {
+      displayProgress += delta * SMOOTHING;
+    } else {
+      displayProgress = targetProgress;
+    }
+
+    applyProgress(trackInfo.container, displayProgress);
+
+    if (Math.abs(targetProgress - displayProgress) > 0.0008) {
+      animationFrameId = requestAnimationFrame(animationStep);
+    }
+  }
+
+  function requestAnimation() {
+    if (!animationFrameId) {
+      animationFrameId = requestAnimationFrame(animationStep);
+    }
   }
 
   function bindDrag(indicator, container, track) {
@@ -101,7 +162,7 @@
       event.preventDefault();
 
       const progress = progressFromClientY(track, event.clientY);
-      setProgress(container, progress);
+      setProgressImmediate(container, progress);
       scrollForProgress(progress);
     });
 
@@ -111,7 +172,7 @@
       }
 
       const progress = progressFromClientY(track, event.clientY);
-      setProgress(container, progress);
+      setProgressImmediate(container, progress);
       scrollForProgress(progress);
     });
 
@@ -126,6 +187,8 @@
       if (indicator.hasPointerCapture(event.pointerId)) {
         indicator.releasePointerCapture(event.pointerId);
       }
+
+      requestAnimation();
     }
 
     indicator.addEventListener("pointerup", endDrag);
@@ -135,29 +198,21 @@
   bindDrag(desktopIndicator, timeline, timeline);
   bindDrag(railIndicator, rail, rail);
 
-  let ticking = false;
-
   function scheduleUpdate() {
-    if (ticking) {
+    if (reducedMotion.matches) {
+      animationStep();
       return;
     }
 
-    ticking = true;
+    if (!isDragging) {
+      const trackInfo = getTrack();
 
-    requestAnimationFrame(function () {
-      if (reducedMotion.matches) {
-        if (timeline) {
-          setProgress(timeline, 0);
-        }
-        if (rail) {
-          setProgress(rail, 0);
-        }
-      } else if (!isDragging) {
-        updateFromScroll();
+      if (trackInfo) {
+        targetProgress = progressFromScroll(trackInfo.track);
       }
+    }
 
-      ticking = false;
-    });
+    requestAnimation();
   }
 
   reducedMotion.addEventListener("change", scheduleUpdate);
