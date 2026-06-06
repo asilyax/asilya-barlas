@@ -30,11 +30,8 @@
   isolation: isolate;
   cursor: pointer;
   transition:
-    color var(--transition-normal) var(--easing-premium),
-    border-color var(--transition-normal) var(--easing-premium),
-    box-shadow var(--transition-normal) var(--easing-premium),
-    transform var(--transition-fast) var(--easing-premium),
-    filter var(--transition-fast) var(--easing-premium);
+    transform 400ms var(--easing-premium),
+    opacity 400ms var(--easing-premium);
 }
 
 .cta::before,
@@ -134,7 +131,7 @@
 .not-found__cta:hover::before,
 .selected-work__card-cta:hover::before,
 .live-experience-section__cta:hover::before {
-  opacity: 0.75;
+  opacity: 0.88;
   transform: translateX(0);
 }
 
@@ -145,7 +142,7 @@
 }
 
 .cta--secondary:hover::before {
-  opacity: 0.72;
+  opacity: 0.82;
   transform: translateX(0);
 }
 
@@ -201,6 +198,29 @@
   100% {
     opacity: 0;
     transform: translateX(410%) skewX(-18deg);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta--primary:hover:not(:active),
+  .hero__cta:hover:not(:active),
+  .site-footer__cta:hover:not(:active),
+  .not-found__cta:hover:not(:active),
+  .selected-work__card-cta:hover:not(:active),
+  .live-experience-section__cta:hover:not(:active),
+  .cta--secondary:hover:not(:active) {
+    transform: scale(1.018);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta:hover:not(:active),
+  .hero__cta:hover:not(:active),
+  .site-footer__cta:hover:not(:active),
+  .not-found__cta:hover:not(:active),
+  .selected-work__card-cta:hover:not(:active),
+  .live-experience-section__cta:hover:not(:active) {
+    transform: none;
   }
 }
 

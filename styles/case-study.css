@@ -3539,3 +3539,65 @@
     height: 220px;
   }
 }
+
+/* Interactive hover — cards and SVG decoratives (transform + opacity only) */
+.wireframe-card,
+.ux-decision-card,
+.layout-grid-card,
+.visual-direction-card,
+.core-components-feature-card {
+  transform: translate3d(0, 0, 0) scale(1);
+  transform-origin: center center;
+  transition: transform 450ms var(--easing-premium);
+}
+
+.core-components-section__component-cards-item img,
+.approach-diagram img {
+  transform: scale(1);
+  opacity: 0.92;
+  transform-origin: center center;
+  transition:
+    transform 500ms var(--easing-premium),
+    opacity 500ms var(--easing-premium);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wireframe-card:hover,
+  .ux-decision-card:hover,
+  .layout-grid-card:hover,
+  .visual-direction-card:hover,
+  .core-components-feature-card:hover {
+    transform: translate3d(0, -4px, 0) scale(1.012);
+  }
+
+  .core-components-section__component-cards-item:hover img,
+  .approach-diagram:hover img {
+    transform: scale(1.008);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wireframe-card,
+  .ux-decision-card,
+  .layout-grid-card,
+  .visual-direction-card,
+  .core-components-feature-card {
+    transition: none;
+  }
+
+  .wireframe-card:hover,
+  .ux-decision-card:hover,
+  .layout-grid-card:hover,
+  .visual-direction-card:hover,
+  .core-components-feature-card:hover {
+    transform: none;
+  }
+
+  .core-components-section__component-cards-item img,
+  .approach-diagram img {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

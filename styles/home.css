@@ -49,7 +49,7 @@
   --hero-glow-r: min(calc(48vmin + 230px), 870px);
   width: max(min(98vw, 1480px), calc(2 * var(--hero-glow-r)));
   height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
-  opacity: 0.6;
+  opacity: 0;
   background-image: radial-gradient(
     circle var(--hero-glow-r) at 98% 88%,
     rgba(246, 241, 231, 0.13) 0%,
@@ -60,6 +60,27 @@
   );
   background-size: calc(2 * var(--hero-glow-r)) calc(2 * var(--hero-glow-r));
   background-position: right bottom;
+}
+
+.home-hero.is-glow-visible::after {
+  animation: hero-glow-right-in 1.3s var(--easing-premium) forwards;
+}
+
+@keyframes hero-glow-right-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero.is-glow-visible::after {
+    animation: none;
+    opacity: 0.6;
+  }
 }
 
 .home-hero > * {
@@ -1033,6 +1054,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  transform: translate3d(0, 0, 0) scale(1);
+  transform-origin: center center;
+  transition: transform 450ms var(--easing-premium);
 }
 
 .selected-work__media {
@@ -1064,6 +1088,23 @@
   background-color: rgba(0, 0, 0, 0.6);
   pointer-events: none;
   opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .selected-work__card:not(.selected-work__card--coming-soon):hover
+    .selected-work__card-visual {
+    transform: translate3d(0, -4px, 0) scale(1.012);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selected-work__card-visual {
+    transition: none;
+  }
+
+  .selected-work__card:hover .selected-work__card-visual {
+    transform: none;
+  }
 }
 
 .selected-work__coming-soon {
