@@ -641,10 +641,11 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* Home — Design section (full-viewport layout, pattern + overlay; v1 no motion). */
+/* Home — Design section (pattern marquee: scroll-triggered, fixed speed).   */
 /* -------------------------------------------------------------------------- */
 
 .design {
+  --design-marquee-duration: 240s;
   --design-overlay-angle: 72deg;
   --design-o-0: 0.05;
   --design-o-12: 0.65;
@@ -690,13 +691,66 @@
   box-sizing: border-box;
   flex-shrink: 0;
   margin: 0;
+  overflow: hidden;
   font-family: var(--font-family-primary);
   font-size: 56px;
   font-weight: var(--font-weight-medium);
   line-height: 64px;
   letter-spacing: 0.01em;
-  white-space: nowrap;
   color: #a99a9a;
+}
+
+.design__pattern-row__track {
+  display: flex;
+  width: max-content;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+.design__pattern-row__text {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@keyframes design-marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-1 * var(--marquee-unit, 0px)), 0, 0);
+  }
+}
+
+@keyframes design-marquee-right {
+  from {
+    transform: translate3d(calc(-1 * var(--marquee-unit, 0px)), 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.design.is-pattern-active
+  .design__pattern-row[data-direction="left"]
+  .design__pattern-row__track {
+  animation: design-marquee-left var(--design-marquee-duration) linear infinite;
+  animation-play-state: running;
+}
+
+.design.is-pattern-active
+  .design__pattern-row[data-direction="right"]
+  .design__pattern-row__track {
+  animation: design-marquee-right var(--design-marquee-duration) linear infinite;
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design__pattern-row__track {
+    animation: none !important;
+    transform: none;
+  }
 }
 
 .design__overlay {
@@ -1407,6 +1461,15 @@
   cursor: grab;
   touch-action: none;
   will-change: transform;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+
+.process__indicator:hover,
+.process__indicator:active {
+  width: calc(var(--process-indicator-size) + 3px);
+  height: calc(var(--process-indicator-size) + 3px);
 }
 
 .process__indicator:active {
@@ -1437,6 +1500,28 @@
 .process__item {
   box-sizing: border-box;
   min-width: 0;
+}
+
+.process__item[data-animate="process-item"] {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.process__item[data-animate="process-item"].is-process-visible {
+  opacity: 1;
+  transition: opacity 0.7s ease 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process__item[data-animate="process-item"] {
+    opacity: 1;
+    transition: none;
+  }
+
+  .process__indicator,
+  .process__rail-indicator {
+    transition: none;
+  }
 }
 
 .process__item--left {
@@ -1675,6 +1760,15 @@
   cursor: grab;
   touch-action: none;
   will-change: transform;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+
+.process__rail-indicator:hover,
+.process__rail-indicator:active {
+  width: calc(var(--process-indicator-size) + 3px);
+  height: calc(var(--process-indicator-size) + 3px);
 }
 
 .process__rail-indicator:active {
