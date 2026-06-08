@@ -12,15 +12,16 @@ menuCloseLinks.forEach((link) => {
 });
 
 const siteHeader = document.querySelector(".site-header");
-const homeHero = document.querySelector(".home-hero");
+const pageHero = document.querySelector(".home-hero, .case-study-hero");
 
 /** Scroll Y above which hide-on-scroll-down / show-on-scroll-up applies. */
 function scrollBehaviorThresholdY() {
-  if (!homeHero) {
+  if (!pageHero) {
     return 56;
   }
-  const band = Math.min(220, Math.max(120, Math.round(homeHero.offsetHeight * 0.22)));
-  return homeHero.offsetTop + band;
+
+  const band = Math.min(220, Math.max(120, Math.round(pageHero.offsetHeight * 0.22)));
+  return pageHero.offsetTop + band;
 }
 
 let lastScrollY = window.scrollY;
