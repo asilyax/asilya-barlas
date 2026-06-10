@@ -48,7 +48,6 @@
     });
 
     code.dataset.charsWrapped = "true";
-    block.style.minWidth = block.offsetWidth + "px";
   }
 
   function getChars() {

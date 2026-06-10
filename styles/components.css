@@ -338,8 +338,8 @@
 }
 
 .site-header__mobile-cta {
-  width: 342px;
-  max-width: calc(100vw - 48px);
+  width: 100%;
+  max-width: 342px;
   margin-top: auto;
   align-self: center;
 }
@@ -871,8 +871,8 @@
   .not-found__cta,
   .selected-work__card-cta,
   .live-experience-section__cta {
-    width: calc(100vw - 48px);
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
     margin-inline: auto;
     padding-inline: var(--space-24);

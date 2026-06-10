@@ -201,8 +201,8 @@
   }
 
   .legal-page .cta {
-    width: calc(100vw - 48px);
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
     margin-inline: auto;
     padding-inline: var(--space-24);

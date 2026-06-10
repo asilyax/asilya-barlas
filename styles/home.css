@@ -7,7 +7,7 @@
   width: 100%;
   min-height: 936px;
   padding: 130px 96px 130px;
-  overflow: visible;
+  overflow-x: clip;
   background-color: var(--background-primary);
 }
 
@@ -29,7 +29,7 @@
 .home-hero::before {
   left: 0;
   --hero-glow-r: calc(min(calc(48vmin + 130px), 770px) * 0.85);
-  width: max(min(98vw, 1480px), calc(2 * var(--hero-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--hero-glow-r))));
   height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
   opacity: 0.51;
   background-image: radial-gradient(
@@ -47,7 +47,7 @@
 .home-hero::after {
   right: 0;
   --hero-glow-r: min(calc(48vmin + 230px), 870px);
-  width: max(min(98vw, 1480px), calc(2 * var(--hero-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--hero-glow-r))));
   height: max(min(92vh, 980px), calc(2 * var(--hero-glow-r)));
   opacity: 0;
   background-image: radial-gradient(
@@ -119,12 +119,12 @@
   }
 
   .home-hero::before {
-    width: max(min(100vw, 1120px), calc(2 * var(--hero-glow-r)));
+    width: min(100%, max(min(100vw, 1120px), calc(2 * var(--hero-glow-r))));
     height: max(min(88vh, 860px), calc(2 * var(--hero-glow-r)));
   }
 
   .home-hero::after {
-    width: max(min(100vw, 1120px), calc(2 * var(--hero-glow-r)));
+    width: min(100%, max(min(100vw, 1120px), calc(2 * var(--hero-glow-r))));
     height: max(min(88vh, 860px), calc(2 * var(--hero-glow-r)));
   }
 
@@ -160,12 +160,12 @@
   }
 
   .home-hero::before {
-    width: max(min(100vw, 620px), calc(2 * var(--hero-glow-r)));
+    width: min(100%, max(min(100vw, 620px), calc(2 * var(--hero-glow-r))));
     height: max(min(85vh, 600px), calc(2 * var(--hero-glow-r)));
   }
 
   .home-hero::after {
-    width: max(min(100vw, 620px), calc(2 * var(--hero-glow-r)));
+    width: min(100%, max(min(100vw, 620px), calc(2 * var(--hero-glow-r))));
     height: max(min(85vh, 600px), calc(2 * var(--hero-glow-r)));
   }
 
@@ -241,7 +241,7 @@
 .mockup-showcase::before {
   left: 0;
   --mockup-glow-r: calc(min(calc(46vmin + 90px), 680px) * 1.23 * 1.1);
-  width: max(min(98vw, 1480px), calc(2 * var(--mockup-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--mockup-glow-r))));
   height: max(min(88vh, 960px), calc(2 * var(--mockup-glow-r)));
   background-image: radial-gradient(
     circle var(--mockup-glow-r) at 2% 88%,
@@ -258,7 +258,7 @@
 .mockup-showcase::after {
   right: 0;
   --mockup-glow-r: calc(min(calc(46vmin + 170px), 780px) * 1.23 * 1.1);
-  width: max(min(98vw, 1480px), calc(2 * var(--mockup-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--mockup-glow-r))));
   height: max(min(88vh, 960px), calc(2 * var(--mockup-glow-r)));
   background-image: radial-gradient(
     circle var(--mockup-glow-r) at 98% 88%,
@@ -361,7 +361,7 @@
 @media (max-width: 1024px) {
   .mockup-showcase::before,
   .mockup-showcase::after {
-    width: max(min(100vw, 1120px), calc(2 * var(--mockup-glow-r)));
+    width: min(100%, max(min(100vw, 1120px), calc(2 * var(--mockup-glow-r))));
     height: max(min(88vh, 860px), calc(2 * var(--mockup-glow-r)));
   }
 
@@ -402,7 +402,7 @@
 @media (max-width: 640px) {
   .mockup-showcase::before,
   .mockup-showcase::after {
-    width: max(min(100vw, 620px), calc(2 * var(--mockup-glow-r)));
+    width: min(100%, max(min(100vw, 620px), calc(2 * var(--mockup-glow-r))));
     height: max(min(85vh, 600px), calc(2 * var(--mockup-glow-r)));
   }
 
@@ -465,7 +465,8 @@
   letter-spacing: 0.08em;
   text-align: left;
   color: #d4d4d4;
-  overflow-x: visible;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .development__code {
@@ -619,6 +620,27 @@
   }
 }
 
+@media (max-width: 1024px) and (min-width: 641px) {
+  .development__inner {
+    flex-wrap: wrap;
+  }
+
+  .development__content {
+    flex: 1 1 280px;
+    min-width: min(100%, 386px);
+    margin-left: 0;
+  }
+
+  .development__code-block {
+    flex: 1 1 280px;
+    max-width: 100%;
+  }
+
+  .selected-work__grid {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 640px) {
   .development {
     padding-block: 0;
@@ -711,6 +733,7 @@
 .design__pattern-row {
   box-sizing: border-box;
   flex-shrink: 0;
+  min-width: 0;
   margin: 0;
   overflow: hidden;
   font-family: var(--font-family-primary);
@@ -897,7 +920,7 @@
   z-index: var(--z-base);
   box-sizing: border-box;
   width: 100%;
-  overflow: visible;
+  overflow-x: clip;
   background-color: var(--background-primary);
   padding-inline: var(--space-96);
   --sw-card-w: 432px;
@@ -944,7 +967,7 @@
 .selected-work::before {
   left: 0;
   --selected-work-glow-r: calc(min(calc(48vmin + 130px), 770px) * 0.85 + 100px);
-  width: max(min(98vw, 1480px), calc(2 * var(--selected-work-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--selected-work-glow-r))));
   height: max(min(92vh, 980px), calc(2 * var(--selected-work-glow-r)));
   opacity: 0.85;
   background-image: radial-gradient(
@@ -962,7 +985,7 @@
 .selected-work::after {
   right: 0;
   --selected-work-glow-r: calc(min(calc(48vmin + 230px), 870px) + 100px);
-  width: max(min(98vw, 1480px), calc(2 * var(--selected-work-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--selected-work-glow-r))));
   height: max(min(92vh, 980px), calc(2 * var(--selected-work-glow-r)));
   opacity: 0.85;
   background-image: radial-gradient(
@@ -980,7 +1003,7 @@
 @media (max-width: 1024px) {
   .selected-work::before,
   .selected-work::after {
-    width: max(min(100vw, 1120px), calc(2 * var(--selected-work-glow-r)));
+    width: min(100%, max(min(100vw, 1120px), calc(2 * var(--selected-work-glow-r))));
     height: max(min(88vh, 860px), calc(2 * var(--selected-work-glow-r)));
   }
 }
@@ -988,7 +1011,7 @@
 @media (max-width: 640px) {
   .selected-work::before,
   .selected-work::after {
-    width: max(min(100vw, 620px), calc(2 * var(--selected-work-glow-r)));
+    width: min(100%, max(min(100vw, 620px), calc(2 * var(--selected-work-glow-r))));
     height: max(min(85vh, 600px), calc(2 * var(--selected-work-glow-r)));
   }
 }
@@ -1047,7 +1070,7 @@
 .selected-work__card-visual {
   position: relative;
   box-sizing: border-box;
-  width: var(--sw-card-w);
+  width: min(var(--sw-card-w), 100%);
   height: var(--sw-card-h);
   overflow: hidden;
   border-radius: 16px;
@@ -1307,10 +1330,10 @@
   }
 
   .selected-work .selected-work__card-cta {
-    align-self: center;
-    width: 290px;
-    min-width: 290px;
-    max-width: 290px;
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     height: 40px;
     min-height: 40px;
   }
@@ -1325,7 +1348,7 @@
   z-index: var(--z-base);
   box-sizing: border-box;
   width: 100%;
-  overflow: visible;
+  overflow-x: clip;
   padding-inline: var(--space-96);
   background-color: var(--background-primary);
 }
@@ -1343,7 +1366,7 @@
 .about-process::before {
   left: 0;
   --ap-glow-r: calc(min(calc(48vmin + 130px), 770px) * 0.85 + 300px);
-  width: max(min(98vw, 1480px), calc(2 * var(--ap-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--ap-glow-r))));
   height: max(min(92vh, 980px), calc(2 * var(--ap-glow-r)));
   opacity: 0.63;
   background-image: radial-gradient(
@@ -1361,7 +1384,7 @@
 .about-process::after {
   right: 0;
   --ap-glow-r: calc(min(calc(48vmin + 230px), 870px) + 300px);
-  width: max(min(98vw, 1480px), calc(2 * var(--ap-glow-r)));
+  width: min(100%, max(min(98vw, 1480px), calc(2 * var(--ap-glow-r))));
   height: max(min(92vh, 980px), calc(2 * var(--ap-glow-r)));
   opacity: 0.63;
   background-image: radial-gradient(
