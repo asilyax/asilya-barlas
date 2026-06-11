@@ -1558,6 +1558,16 @@
     max-width: 307px;
   }
 
+  @container approach (max-width: 799px) {
+    .ux-decision-grid {
+      justify-items: center;
+    }
+
+    .ux-decision-grid__item:nth-child(n) {
+      justify-content: center;
+    }
+  }
+
   .ux-decision-grid {
     grid-template-columns: 1fr;
     width: 100%;
@@ -1568,10 +1578,12 @@
   .ux-decision-grid__item:nth-child(n) {
     grid-column: 1;
     grid-row: auto;
+    justify-content: center;
   }
 
   .ux-decision-card {
     width: min(342px, 100%);
+    margin-inline: auto;
   }
 
   .ux-decision-card__title {
