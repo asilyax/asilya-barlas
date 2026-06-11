@@ -10,13 +10,30 @@
 
   const TILT_DELAY_MS = 300;
 
-  if (!hero || !section || !primary || !secondary || reducedMotion.matches) {
+  if (!hero || !section || !primary || reducedMotion.matches) {
     return;
   }
 
+  function loadSecondaryImage() {
+    if (!secondary || mobile.matches) {
+      return;
+    }
+
+    const deferredSrc = secondary.dataset.src;
+
+    if (deferredSrc && secondary.getAttribute("src") !== deferredSrc) {
+      secondary.src = deferredSrc;
+    }
+  }
+
   primary.classList.add("is-mockup-slide");
-  secondary.classList.add("is-mockup-slide");
   section.classList.add("is-mockup-scroll");
+
+  loadSecondaryImage();
+
+  if (secondary && secondary.getAttribute("src")) {
+    secondary.classList.add("is-mockup-slide");
+  }
 
   let tiltTimer = null;
   let ticking = false;
@@ -74,6 +91,10 @@
   }
 
   function clearTilt() {
+    if (!secondary) {
+      return;
+    }
+
     clearTimeout(tiltTimer);
     tiltTimer = null;
     secondary.classList.remove("is-mockup-tilted", "is-mockup-tilting");
@@ -96,7 +117,7 @@
   }
 
   function scheduleTilt() {
-    if (tiltTimer || secondary.classList.contains("is-mockup-tilted")) {
+    if (!secondary || tiltTimer || secondary.classList.contains("is-mockup-tilted")) {
       return;
     }
 
@@ -118,7 +139,10 @@
     if (mobile.matches) {
       clearTilt();
       setMotion(primary, 0, offset * -moveY, progress);
-      clearMotion(secondary);
+
+      if (secondary) {
+        clearMotion(secondary);
+      }
 
       if (progress >= 1) {
         section.classList.add("is-mockup-complete");
@@ -131,8 +155,17 @@
       return;
     }
 
+    loadSecondaryImage();
+
+    if (secondary && secondary.getAttribute("src")) {
+      secondary.classList.add("is-mockup-slide");
+    }
+
     setMotion(primary, offset * -moveX, offset * -moveY, progress);
-    setMotion(secondary, offset * moveX, offset * -moveY, progress);
+
+    if (secondary && secondary.getAttribute("src")) {
+      setMotion(secondary, offset * moveX, offset * -moveY, progress);
+    }
 
     if (progress >= 1) {
       section.classList.add("is-mockup-complete");
@@ -143,6 +176,11 @@
       clearGlow();
       clearTilt();
     }
+  }
+
+  function onBreakpointChange() {
+    loadSecondaryImage();
+    update();
   }
 
   window.addEventListener(
@@ -161,9 +199,9 @@
     { passive: true }
   );
 
-  mobile.addEventListener("change", update);
-  desktop.addEventListener("change", update);
-  tablet.addEventListener("change", update);
+  mobile.addEventListener("change", onBreakpointChange);
+  desktop.addEventListener("change", onBreakpointChange);
+  tablet.addEventListener("change", onBreakpointChange);
   window.addEventListener("resize", update);
   update();
 })();

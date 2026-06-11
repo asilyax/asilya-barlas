@@ -9,6 +9,9 @@
     return;
   }
 
+  let patternInitialized = false;
+  let resizeTicking = false;
+
   function createTextSpan(text, hidden) {
     const span = document.createElement("span");
     span.className = "design__pattern-row__text";
@@ -85,26 +88,46 @@
     });
   }
 
-  pattern.querySelectorAll(".design__pattern-row").forEach(setupRow);
-
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(remeasureAll);
-  }
-
-  let resizeTicking = false;
-
-  window.addEventListener("resize", function () {
-    if (resizeTicking) {
+  function initPattern() {
+    if (patternInitialized) {
       return;
     }
 
-    resizeTicking = true;
+    patternInitialized = true;
 
-    requestAnimationFrame(function () {
-      remeasureAll();
-      resizeTicking = false;
+    pattern.querySelectorAll(".design__pattern-row").forEach(setupRow);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(remeasureAll);
+    }
+
+    window.addEventListener("resize", function () {
+      if (resizeTicking) {
+        return;
+      }
+
+      resizeTicking = true;
+
+      requestAnimationFrame(function () {
+        remeasureAll();
+        resizeTicking = false;
+      });
     });
-  });
+  }
+
+  const initObserver = new IntersectionObserver(
+    function (entries) {
+      if (!entries[0].isIntersecting) {
+        return;
+      }
+
+      initObserver.disconnect();
+      initPattern();
+    },
+    { rootMargin: "400px 0px", threshold: 0 },
+  );
+
+  initObserver.observe(section);
 
   if (reducedMotion.matches) {
     return;

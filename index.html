@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Asilya Barlas — UI/UX design and front-end development for fast, scalable digital experiences."
+    />
     <title>Asilya Barlas</title>
     <link
       rel="preload"
@@ -79,12 +83,19 @@
         class="mockup-showcase__image mockup-showcase__image--primary"
         src="assets/images/home-mockup-primary.webp"
         alt=""
+        width="365"
+        height="750"
+        decoding="async"
+        fetchpriority="high"
         data-animate="mockup-left"
       />
       <img
         class="mockup-showcase__image mockup-showcase__image--secondary"
-        src="assets/images/home-mockup-secondary.webp"
+        data-src="assets/images/home-mockup-secondary.webp"
         alt=""
+        width="365"
+        height="750"
+        decoding="async"
         aria-hidden="true"
         data-animate="mockup-right"
       />
@@ -166,6 +177,10 @@
                 class="selected-work__image"
                 src="assets/images/project-aurelion-cover.webp"
                 alt=""
+                width="994"
+                height="750"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="selected-work__card-dim" aria-hidden="true"></div>
@@ -187,6 +202,10 @@
                 class="selected-work__image"
                 src="assets/images/project-velories-cover.webp"
                 alt=""
+                width="1000"
+                height="750"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="selected-work__card-dim" aria-hidden="true"></div>
@@ -289,8 +308,8 @@
           <span class="site-footer__column-title">Contact</span>
           <ul class="site-footer__list">
             <li><a class="site-footer__link" href="mailto:asilyabarlas@gmail.com">asilyabarlas@gmail.com</a></li>
-            <li><a class="site-footer__link" href="#">LinkedIn</a></li>
-            <li><a class="site-footer__link" href="#">GitHub</a></li>
+            <li><a class="site-footer__link" href="https://www.linkedin.com/in/asilya-barlas-ab554b25a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a class="site-footer__link" href="https://github.com/asilyax" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </nav>
       </div>
@@ -313,9 +332,9 @@
     </div>
   </div>
 </footer>
-  <script src="scripts/intro.js"></script>
-  <script src="scripts/navigation.js"></script>
-  <script src="scripts/mockup-scroll.js"></script>
+  <script src="scripts/intro.js" defer></script>
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/mockup-scroll.js" defer></script>
   <script src="scripts/development-code.js" defer></script>
   <script src="scripts/design-pattern.js" defer></script>
   <script src="scripts/process-reveal.js" defer></script>

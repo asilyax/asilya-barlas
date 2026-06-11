@@ -15,13 +15,19 @@ const siteHeader = document.querySelector(".site-header");
 const pageHero = document.querySelector(".home-hero, .case-study-hero");
 
 /** Scroll Y above which hide-on-scroll-down / show-on-scroll-up applies. */
-function scrollBehaviorThresholdY() {
+function computeScrollBehaviorThresholdY() {
   if (!pageHero) {
     return 56;
   }
 
   const band = Math.min(220, Math.max(120, Math.round(pageHero.offsetHeight * 0.22)));
   return pageHero.offsetTop + band;
+}
+
+let cachedScrollThreshold = computeScrollBehaviorThresholdY();
+
+function refreshScrollBehaviorThreshold() {
+  cachedScrollThreshold = computeScrollBehaviorThresholdY();
 }
 
 let lastScrollY = window.scrollY;
@@ -40,9 +46,8 @@ function syncHeaderScrollBehavior() {
   }
 
   const y = window.scrollY;
-  const threshold = scrollBehaviorThresholdY();
 
-  if (y <= threshold) {
+  if (y <= cachedScrollThreshold) {
     siteHeader.classList.remove("site-header--hidden");
     lastScrollY = y;
     return;
@@ -83,6 +88,7 @@ if (menuToggle) {
 
 window.addEventListener("scroll", scheduleHeaderScrollSync, { passive: true });
 window.addEventListener("resize", () => {
+  refreshScrollBehaviorThreshold();
   lastScrollY = window.scrollY;
   syncHeaderScrollBehavior();
 });
