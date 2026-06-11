@@ -153,6 +153,13 @@
 @media (max-width: 640px) {
   .not-found {
     padding-top: 205px;
+    padding-inline: var(--space-24);
+    box-sizing: border-box;
+  }
+
+  .not-found__content {
+    width: 100%;
+    min-width: 0;
   }
 
   .not-found__code {
@@ -172,5 +179,8 @@
 
   .not-found__cta {
     margin-top: 32px;
+    align-self: stretch;
+    width: 100%;
+    max-width: 100%;
   }
 }
